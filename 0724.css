@@ -1,0 +1,190 @@
+@charset "UTF-8";
+* {
+  position: relative;
+  font-family: "Ysabeau Infant", 微軟正黑體;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.todolist {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1120px;
+  padding: 0px 10px;
+  letter-spacing: 1px;
+  background-color: #fff7f0;
+  border-radius: 20px;
+}
+.todolist h1 {
+  text-align: center;
+  padding-top: 10px;
+}
+.todolist .input {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.todolist .input h4 {
+  display: inline-block;
+}
+.todolist .input textarea {
+  vertical-align: middle;
+  width: 300px;
+  height: 80px;
+  padding: 10px;
+  margin: 0px 20px;
+  resize: none;
+}
+.todolist .input button {
+  cursor: pointer;
+}
+.todolist .alllist {
+  font-size: 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.todolist .alllist .list {
+  width: calc((100% - 120px) / 5);
+  height: 200px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  font-size: 12px;
+  margin: 10px;
+  word-wrap: break-word;
+  border-radius: 20px;
+  border: solid 2px pink;
+}
+.todolist .alllist .list p {
+  padding: 10px;
+}
+.todolist .alllist .list .done, .todolist .alllist .list .remove {
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+.todolist .alllist .list .done {
+  left: 10%;
+  background-color: #daf2e0;
+}
+.todolist .alllist .list .done:hover {
+  background-color: #8deba3;
+}
+.todolist .alllist .list .end {
+  border-radius: 0%;
+  left: 0.5%;
+  width: 91%;
+  text-align: center;
+  background-color: #8deba3;
+  padding: 3px 8px;
+  cursor: default;
+}
+.todolist .alllist .list .remove {
+  left: 60%;
+  background-color: #f7c6cf;
+}
+.todolist .alllist .list .remove:hover {
+  background-color: #ed91a2;
+}
+.todolist svg {
+  position: absolute;
+  width: 300px;
+  left: 78%;
+  top: 10px;
+}
+.todolist svg circle {
+  opacity: 0;
+  stroke-width: 50px;
+  stroke-dasharray: 1px;
+  stroke: rgba(247, 244, 20, 0.8);
+  fill: #fff7f0;
+}
+.todolist svg circle.circle {
+  animation: firecircle 4s;
+  animation-delay: 1.5s;
+}
+.todolist svg line {
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.5);
+}
+.todolist svg line.line {
+  animation: fireline 2s linear;
+}
+
+@keyframes done {
+  0% {
+    border-radius: 50%;
+    width: 30%;
+  }
+  20% {
+    border-radius: 0%;
+    left: 0.5%;
+    width: 30%;
+  }
+  40% {
+    border-radius: 0%;
+    left: 0.5%;
+    width: 50%;
+  }
+  60% {
+    border-radius: 0%;
+    left: 0.5%;
+    width: 70%;
+  }
+  80% {
+    border-radius: 0%;
+    left: 0.5%;
+    width: 91%;
+  }
+  100% {
+    border-radius: 0%;
+    left: 0.5%;
+    padding: 3px 8px;
+    width: 91%;
+  }
+}
+@keyframes fireline {
+  0% {
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(-65px);
+  }
+  100% {
+    transform: translateY(-65px);
+    opacity: 0;
+  }
+}
+@keyframes firecircle {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    stroke: rgba(247, 244, 20, 0.7);
+  }
+  50% {
+    opacity: 1;
+    stroke: rgba(255, 89, 161, 0.5);
+  }
+  75% {
+    opacity: 1;
+    stroke: rgba(66, 98, 255, 0.5);
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=0724.css.map */
